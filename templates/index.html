@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ Chatbot</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 FAQ Chatbot</h1>
+            <p>Ask me anything about our products and services!</p>
+        </div>
+
+        <div class="chat-container">
+            <div class="chat-header">
+                <h2>Customer Support</h2>
+                <p>I'm here to help you find answers quickly</p>
+            </div>
+
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    <div class="message-bubble">
+                        Hello! I'm your FAQ assistant. I can help you find answers to common questions. Try asking me
+                        something like "What are your business hours?" or "How do I return a product?"
+                        <div class="suggestion-buttons">
+                            <span class="suggestion-btn"
+                                onclick="askQuestion('How do I return a product?')">Returns</span>
+                            <span class="suggestion-btn"
+                                onclick="askQuestion('What payment methods do you accept?')">Payment</span>
+                            <span class="suggestion-btn" onclick="askQuestion('What are your business hours?')">Business
+                                Hours</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <span>Thinking...</span>
+            </div>
+
+            <div class="input-container">
+                <div class="input-group">
+                    <input type="text" id="userInput" placeholder="Type your question here..."
+                        onkeypress="handleKeyPress(event)">
+                    <button id="sendBtn" onclick="sendMessage()">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+
+</html>
